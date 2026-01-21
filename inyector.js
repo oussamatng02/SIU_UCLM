@@ -21,6 +21,8 @@ const run = async () => {
         process.exit(1);
     }
 
+    const filas = [];
+
     fs.createReadStream(CSV_FILE)
         .pipe(csv())
         .on('data', (row) => filas.push(row))
